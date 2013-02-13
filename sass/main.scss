@@ -1,0 +1,79 @@
+@import "normalize","h5bp";
+
+/* define some variables */
+
+$logo2x: "../img/logo2x.jpg";
+$logo1x: "../img/logo1x.jpg";
+$logoWidth: 300px; //the css pixel width of the logo.
+$logoHeight: 100px; //the css pixel height of the logo.
+
+
+body{
+	text-align: center;
+	text-rendering: optimizeLegibility;
+}
+
+main{
+	padding: 0 10% 0 10%;
+	width: 80%;
+	margin: auto;
+	@media screen and (min-width: 768px) {
+		width: 480px;
+	}
+}
+
+h1{
+	&.logo{
+		@extend .ir;
+		display: block;
+		background-image: url($logo1x);
+		width:$logoWidth;
+		height:$logoHeight;
+		margin: 10% auto 60px auto;
+		background-size: cover;
+		//lets get some HiDPI logos in there...
+		@media
+		only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (   min--moz-device-pixel-ratio: 1.5),
+		only screen and (        min-device-pixel-ratio: 1.5){	  
+			background-image: url($logo2x);
+		}
+	}
+}
+
+/* swap the logo for the higher quality one if needed... */
+
+form{
+	border: 2px solid #e2e2e2;
+	border-radius: 5px;
+	padding: 20px 0;
+	margin: 60px 0px;
+	label{
+		display: block;
+	}
+	input{
+		
+		display: block;
+		margin: 0 auto 20px auto;
+		width: 70%;
+		padding: 5px;
+		text-align: center;
+		&.submit{
+			display: block;
+			height: 40px;
+			width:inherit;
+			margin-bottom: 0px;
+			padding: 0 30px;
+			-webkit-appearance: none;
+			&:active{
+				background-color: #e2e2e2;
+			}
+		}
+	}
+}
+
+footer{
+	p,a{
+		color: #e2e2e2;
+	}
+}
